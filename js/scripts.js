@@ -9,6 +9,9 @@ console.log(heading);  // Si no encontró el selector en el document, imprime nu
 
 // querySelectorAll
 
+const enlaces = document.querySelectorAll('.navegacion a');  // Retorna 0 si no existe o un arreglo de todas las existencias
+console.log(enlaces);
 
+enlaces[0].textContent = "Nuevo Texto para Enlace";
 
 // getElementById
