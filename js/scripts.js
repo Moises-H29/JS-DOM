@@ -39,3 +39,30 @@ navegacion.appendChild(nuevoEnlace);
 
 
 console.log(nuevoEnlace);
+
+// Eventos
+
+console.log(1);
+
+window.addEventListener("load", imprimir);  // load espera a que el javascript y los archivos que dependen del HTML estén listos (imágeenes y CSS)
+
+
+window.onload = function() {  // Forma alternativa
+    console.log(3);
+}
+
+document.addEventListener('DOMContentLoaded', function() {  // Solo espera el HTML, pero no espera CSS o imágenes
+    console.log(4);
+});
+
+
+console.log(5);
+
+
+function imprimir() {  // Funcion para Callback
+    console.log(6);
+}
+
+window.onscroll = function() {
+    console.log('scrolling...');
+}
