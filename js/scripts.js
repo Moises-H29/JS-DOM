@@ -10,14 +10,32 @@ console.log(heading);  // Si no encontró el selector en el document, imprime nu
 // querySelectorAll
 
 const enlaces = document.querySelectorAll('.navegacion a');  // Retorna 0 si no existe o un arreglo de todas las existencias
-console.log(enlaces);
+// console.log(enlaces);
 
 enlaces[0].textContent = "Nuevo Texto para Enlace";
 // enlaces[0].href = "http://google.com";
 enlaces[0].classList.add('nueva-clase');
-enlaces[0].classList.remove('navegacion__enlace');
+// enlaces[0].classList.remove('navegacion__enlace');
+//? getElementById
+// const heading2 = document.getElementById('heading');
+// console.log(heading2);
 
-// getElementById
+//* Generar un nuevo enlace
+const nuevoEnlace = document.createElement('A');
 
-const heading2 = document.getElementById('heading');
-console.log(heading2);
+// Agregar el href
+nuevoEnlace.href = "nuevo-enlace.html";
+
+// Agregar el texto
+nuevoEnlace.textContent = "Tienda Virtual";
+
+// Agregar la clase
+nuevoEnlace.classList.add("navegacion__enlace");
+
+// Agregarla al Documento
+const navegacion = document.querySelector('.navegacion');
+navegacion.appendChild(nuevoEnlace);
+
+
+
+console.log(nuevoEnlace);
