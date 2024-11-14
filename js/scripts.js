@@ -63,6 +63,19 @@ function imprimir() {  // Funcion para Callback
     console.log(6);
 }
 
-window.onscroll = function() {
-    console.log('scrolling...');
+window.onscroll = function(evento) {
+    console.log(evento);
 }
+
+
+// Seleccionar elementos HTML y asignarles un evento
+
+const btnEnviar = document.querySelector('.boton--primario');
+
+btnEnviar.addEventListener('click', function(evento) {
+    console.log(evento);
+    evento.preventDefault();  // Previene la acción por default de "Enviar Formulario"
+
+    //* Útil para validar formulario
+    console.log("Enviando formulario");
+})
