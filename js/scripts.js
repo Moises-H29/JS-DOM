@@ -42,30 +42,30 @@ console.log(nuevoEnlace);
 
 // Eventos
 
-console.log(1);
+// console.log(1);
 
-window.addEventListener("load", imprimir);  // load espera a que el javascript y los archivos que dependen del HTML estén listos (imágeenes y CSS)
-
-
-window.onload = function() {  // Forma alternativa
-    console.log(3);
-}
-
-document.addEventListener('DOMContentLoaded', function() {  // Solo espera el HTML, pero no espera CSS o imágenes
-    console.log(4);
-});
+// window.addEventListener("load", imprimir);  // load espera a que el javascript y los archivos que dependen del HTML estén listos (imágeenes y CSS)
 
 
-console.log(5);
+// window.onload = function() {  // Forma alternativa
+//     console.log(3);
+// }
+
+// document.addEventListener('DOMContentLoaded', function() {  // Solo espera el HTML, pero no espera CSS o imágenes
+//     console.log(4);
+// });
 
 
-function imprimir() {  // Funcion para Callback
-    console.log(6);
-}
+// console.log(5);
 
-window.onscroll = function(evento) {
-    console.log(evento);
-}
+
+// function imprimir() {  // Funcion para Callback
+//     console.log(6);
+// }
+
+// window.onscroll = function(evento) {
+//     console.log(evento);
+// }
 
 
 // Seleccionar elementos HTML y asignarles un evento
@@ -78,4 +78,30 @@ btnEnviar.addEventListener('click', function(evento) {
 
     //* Útil para validar formulario
     console.log("Enviando formulario");
-})
+});
+
+
+//* Eventos de los Inputs y Textarea
+
+const datos = {
+    nombre: '',
+    email: '',
+    mensaje: ''
+}
+
+const nombre = document.querySelector('#nombre');
+const email = document.querySelector('#email');
+const mensaje = document.querySelector('#mensaje');
+
+nombre.addEventListener('input', leerTexto);
+email.addEventListener('input', leerTexto);
+mensaje.addEventListener('input', leerTexto);
+
+//! Meter al objeto los valores
+function leerTexto(e) {
+    // console.log(e.target.value);
+    datos[e.target.id] = e.target.value;  // Acceder al valor del objeto y modificarlo
+
+    console.log(datos);
+}
+
