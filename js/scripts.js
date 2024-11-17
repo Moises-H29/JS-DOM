@@ -70,15 +70,15 @@ console.log(nuevoEnlace);
 
 // Seleccionar elementos HTML y asignarles un evento
 
-const btnEnviar = document.querySelector('.boton--primario');
+// const btnEnviar = document.querySelector('.boton--primario');
 
-btnEnviar.addEventListener('click', function(evento) {
-    console.log(evento);
-    evento.preventDefault();  // Previene la acción por default de "Enviar Formulario"
+// btnEnviar.addEventListener('click', function(evento) {  //? Como esta asociado a un click, podemos usarlo en imagenes, textos, etc.
+//     console.log(evento);
+//     evento.preventDefault();  // Previene la acción por default de "Enviar Formulario"
 
-    //* Útil para validar formulario
-    console.log("Enviando formulario");
-});
+//     //* Útil para validar formulario
+//     console.log("Enviando Formulario");
+// });
 
 
 //* Eventos de los Inputs y Textarea
@@ -92,10 +92,21 @@ const datos = {
 const nombre = document.querySelector('#nombre');
 const email = document.querySelector('#email');
 const mensaje = document.querySelector('#mensaje');
+const formulario = document.querySelector('.formulario');
+
 
 nombre.addEventListener('input', leerTexto);
 email.addEventListener('input', leerTexto);
 mensaje.addEventListener('input', leerTexto);
+
+//* El Evento de Submit
+formulario.addEventListener('submit', function(evento) {
+    evento.preventDefault();
+
+    // Validar formulario
+
+    // Enviar formulario
+});
 
 //! Meter al objeto los valores
 function leerTexto(e) {
