@@ -105,7 +105,17 @@ formulario.addEventListener('submit', function(evento) {
 
     // Validar formulario
 
+    const { nombre, email, mensaje } = datos;
+
+    if (nombre === "" || email === "" || mensaje == "") {
+        mostrarError("Todos los campos son obligatorios");
+
+        return;  // Return corta la ejecución del código
+    }
+
     // Enviar formulario
+
+    console.log("Enviando Formulario");
 });
 
 //! Meter al objeto los valores
@@ -113,6 +123,6 @@ function leerTexto(e) {
     // console.log(e.target.value);
     datos[e.target.id] = e.target.value;  // Acceder al valor del objeto y modificarlo
 
-    console.log(datos);
+    // console.log(datos);
 }
 
