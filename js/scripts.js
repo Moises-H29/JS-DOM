@@ -110,7 +110,7 @@ formulario.addEventListener('submit', function(evento) {
     if (nombre === "" || email === "" || mensaje == "") {
         mostrarError("Todos los campos son obligatorios");
 
-        return;  // Return corta la ejecución del código
+        return;  // Return corta la ejecución del código, usado para evitar ejecutar el resto
     }
 
     // Enviar formulario
